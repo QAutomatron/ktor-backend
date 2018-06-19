@@ -19,4 +19,6 @@ After run server will available on 8090 port
 
 `/auth/basic` - GET basic auth protected `(test:test)`
 
+`/usr/info` - GET will return JSON with user info (all data except password) based on jwt token
+
 

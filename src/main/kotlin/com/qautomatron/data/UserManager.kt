@@ -2,13 +2,13 @@ package com.qautomatron.data
 
 import io.ktor.auth.UserPasswordCredential
 
-object UserManager {
+object UserManager: UserSource {
 
-    fun findUserByCredentials(credentials: UserPasswordCredential): User? {
-        return Users.find { user -> user.name == credentials.name && user.pass == credentials.password }
+    override fun findUserByCredentials(credentials: UserPasswordCredential): User? {
+        return Users.find { user -> user.name.equals(credentials.name, ignoreCase = true) && user.pass == credentials.password }
     }
 
-    fun findUserById(id: Int): User? {
+    override fun findUserById(id: Int): User? {
         return Users.find { user -> user.id == id }
     }
 
