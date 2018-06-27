@@ -47,6 +47,8 @@ dependencies {
     compile "io.ktor:ktor-gson:$ktor_version"
     compile 'io.github.microutils:kotlin-logging:1.5.4'
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+
+    testCompile "io.ktor:ktor-server-test-host:$ktor_version"
 }
 
 kotlin {
